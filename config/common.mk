@@ -292,7 +292,7 @@ ifdef CM_BUILDTYPE
     endif
 else
     # OFFICIAL Version Release of RR
-    CM_BUILDTYPE := Resurrection-Remix-LP-v5.5.7
+    CM_BUILDTYPE := Resurrection-Remix-LP+JC-v5.5.7
     CM_EXTRAVERSION :=
 endif
 
@@ -312,10 +312,13 @@ else
     endif
 endif
 
+$(call inherit-product, jcrom/common/common.mk)
+
 PRODUCT_PROPERTY_OVERRIDES += \
+  ro.jcrom.version=$(JCROM_VERSION) \
   ro.rr.version=$(CM_BUILD) \
   ro.rr_modversion=$(CM_BUILDTYPE) \
-  ro.resurrection.version=Resurrection-Remix-LP-5.0-$(shell date -u +%Y%m%d) \
+  ro.resurrection.version=Resurrection-Remix-LP+JC-5.0-$(shell date -u +%Y%m%d) \
   ro.cmlegal.url=https://cyngn.com/legal/privacy-policy \
   rr.ota.version= $(shell date -u +%Y%m%d)
 
