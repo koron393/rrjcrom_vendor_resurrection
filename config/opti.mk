@@ -32,10 +32,9 @@ endif
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.rr.android=($(AND_TC_NAME)-$(AND_TC_VERSION_NUMBER))-$(AND_TC_DATE)
 
-KERNEL_TC_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-eabi-$(TARGET_TC_KERNEL)
-
-KERNEL_TC_VERSION := $(shell $(KERNEL_TC_PATH)/bin/arm-eabi-gcc --version 2>&1)
-KERNEL_TC_VERSION_NUMBER := $(shell $(KERNEL_TC_PATH)/bin/arm-eabi-gcc -dumpversion 2>&1)
+KERNEL_TC_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-$(TARGET_TC_KERNEL)
+KERNEL_TC_VERSION := $(shell $(KERNEL_TC_PATH)/bin/arm-linux-androideabi-gcc --version 2>&1)
+KERNEL_TC_VERSION_NUMBER := $(shell $(KERNEL_TC_PATH)/bin/arm-linux-androideabi-gcc -dumpversion 2>&1)
 
 # Find strings in version info
 ifneq ($(filter (UBERTC%),$(KERNEL_TC_VERSION)),)
