@@ -163,7 +163,6 @@ PRODUCT_PACKAGES += \
     Eleven \
     CMFileManager \
     LockClock \
-    CMAccount \
     CMHome \
     OTACenter \
     OmniSwitch \
